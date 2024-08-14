@@ -1,0 +1,129 @@
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$1cB9KkL91WoPuDZSmUTHEp$X3NX8qzxrR8rjeZJ2CIDueQw+P8st2Tvo8CO4lGcvHU=",
+      "last_login": "2024-08-14T13:02:31.441Z",
+      "is_superuser": true,
+      "first_name": "Admin",
+      "last_name": "Adminov",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-08-14T13:02:09.609Z",
+      "email": "admin@gmail.com",
+      "phone_number": null,
+      "avatar": "",
+      "token": null,
+      "city": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "datetime": "2024-08-14T13:14:03.649Z",
+      "course": 2,
+      "amount": "134400.00",
+      "method": "cash"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "datetime": "2024-08-14T15:23:03.259Z",
+      "course": 2,
+      "amount": "150000.00",
+      "method": "cash"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 3,
+    "fields": {
+      "user": 1,
+      "datetime": "2024-09-16T23:23:03.599Z",
+      "course": 1,
+      "amount": "187000.00",
+      "method": "credit"
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 1,
+    "fields": {
+      "name": "Физико-математический",
+      "preview": "",
+      "description": null
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 2,
+    "fields": {
+      "name": "Информационные технологии",
+      "preview": "",
+      "description": null
+    }
+  },
+  {
+    "model": "education.lesson",
+    "pk": 1,
+    "fields": {
+      "name": "Физика",
+      "preview": "",
+      "description": null,
+      "video": "",
+      "course": 1
+    }
+  },
+  {
+    "model": "education.lesson",
+    "pk": 2,
+    "fields": {
+      "name": "Математика",
+      "preview": "",
+      "description": null,
+      "video": "",
+      "course": 1
+    }
+  },
+  {
+    "model": "education.lesson",
+    "pk": 3,
+    "fields": {
+      "name": "Информатика",
+      "preview": "",
+      "description": null,
+      "video": "",
+      "course": 2
+    }
+  },
+  {
+    "model": "education.lesson",
+    "pk": 4,
+    "fields": {
+      "name": "Python",
+      "preview": "",
+      "description": null,
+      "video": "",
+      "course": 2
+    }
+  },
+  {
+    "model": "education.lesson",
+    "pk": 5,
+    "fields": {
+      "name": "C++",
+      "preview": "",
+      "description": null,
+      "video": "",
+      "course": 2
+    }
+  }
+]
