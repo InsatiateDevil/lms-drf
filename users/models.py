@@ -1,7 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-from education.models import Course
+from education.models import Course, Lesson
 
 
 # Create your models here.
@@ -43,22 +43,28 @@ class User(AbstractUser):
     REQUIRED_FIELDS = []
 
     class Meta:
-        verbose_name = 'Пользователь'
-        verbose_name_plural = 'Пользователи'
-        ordering = ['-date_joined']
-        permissions = (
-            ('users.can_change_status', 'Может изменять статус пользователя'),
-            (
-            'users.can_view_users', 'Может просматривать список пользователей'),
-        )
+        verbose_name = 'пользователь'
+        verbose_name_plural = 'пользователи'
 
     def __str__(self):
         return self.email
 
 
 class Payment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    datetime = models.DateTimeField(auto_now_add=True)
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    amount = models.DecimalField(max_digits=10, decimal_places=2)
-    method = models.CharField(max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Пользователь')
+    datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата оплаты')
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name='Курс', null=True, blank=True)
+    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, verbose_name='Оплаченный урок', null=True, blank=True)
+    amount = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Сумма платежа')
+    method = models.CharField(max_length=100, verbose_name='Способ оплаты')
+
+    class Meta:
+        verbose_name = 'платеж'
+        verbose_name_plural = 'платежи'
+
+    def __str__(self):
+        if self.lesson:
+            return f'{self.user} - {self.lesson}'
+        else:
+            return f'{self.user} - {self.course}'
+

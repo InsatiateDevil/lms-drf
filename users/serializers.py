@@ -9,4 +9,4 @@ class PaymentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Payment
-        fields = ('user', 'datetime', 'amount', 'method', 'course', )
+        fields = ('user', 'datetime', 'amount', 'method', 'course', 'lesson',)
