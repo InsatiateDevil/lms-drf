@@ -1,132 +1,212 @@
 [
-  {
+{
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+        "name": "moderation",
+        "permissions": []
+    }
+},
+{
     "model": "users.user",
     "pk": 1,
     "fields": {
-      "password": "pbkdf2_sha256$600000$1cB9KkL91WoPuDZSmUTHEp$X3NX8qzxrR8rjeZJ2CIDueQw+P8st2Tvo8CO4lGcvHU=",
-      "last_login": "2024-08-14T13:02:31.441Z",
-      "is_superuser": true,
-      "first_name": "Admin",
-      "last_name": "Adminov",
-      "is_staff": true,
-      "is_active": true,
-      "date_joined": "2024-08-14T13:02:09.609Z",
-      "email": "admin@gmail.com",
-      "phone_number": null,
-      "avatar": "",
-      "token": null,
-      "city": null,
-      "groups": [],
-      "user_permissions": []
+        "password": "pbkdf2_sha256$600000$1cB9KkL91WoPuDZSmUTHEp$X3NX8qzxrR8rjeZJ2CIDueQw+P8st2Tvo8CO4lGcvHU=",
+        "last_login": "2024-08-18T14:14:22.041Z",
+        "is_superuser": true,
+        "first_name": "Admin",
+        "last_name": "Adminov",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-08-14T13:02:09.609Z",
+        "email": "admin@gmail.com",
+        "phone_number": null,
+        "avatar": "",
+        "token": null,
+        "city": null,
+        "groups": [],
+        "user_permissions": []
     }
-  },
-  {
+},
+{
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$5JUH5t2exKDi61u2GkPRuZ$q1DkWTJMWfMBTU0q9jG4tkychnsCu/wb8fi9uUrSpY4=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "Moder",
+        "last_name": "Moderov",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-08-18T14:18:54Z",
+        "email": "moder@mail.ru",
+        "phone_number": null,
+        "avatar": "",
+        "token": null,
+        "city": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$wI55LN46AEFGpbYkim0BYl$8o6jBCA3OvxCzszE5qb/J6B32oEPepjHsq5Ne4pTkR4=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "Owner1",
+        "last_name": "Ownerov1",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-08-18T14:51:00.726Z",
+        "email": "owner1@mail.ru",
+        "phone_number": null,
+        "avatar": "",
+        "token": null,
+        "city": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$atba4iIwRNnLCCrANbGWs6$deP1rdoah7cbZdVOOZIjFwk5vckPSmiSTCrpvozR5w8=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "Owner2",
+        "last_name": "Ownerov2",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-08-18T15:13:22.388Z",
+        "email": "owner2@mail.ru",
+        "phone_number": null,
+        "avatar": "",
+        "token": null,
+        "city": null,
+        "groups": [
+            1
+        ],
+        "user_permissions": []
+    }
+},
+{
     "model": "users.payment",
     "pk": 1,
     "fields": {
-      "user": 1,
-      "datetime": "2024-08-14T13:14:03.649Z",
-      "course": 1,
-      "lesson": null,
-      "amount": "134400.00",
-      "method": "cash"
+        "user": 1,
+        "datetime": "2024-08-14T13:14:03.649Z",
+        "course": 1,
+        "lesson": null,
+        "amount": "134400.00",
+        "method": "cash"
     }
-  },
-  {
+},
+{
     "model": "users.payment",
     "pk": 2,
     "fields": {
-      "user": 1,
-      "datetime": "2024-08-14T15:23:03.259Z",
-      "course": 2,
-      "lesson": null,
-      "amount": "150000.00",
-      "method": "cash"
+        "user": 1,
+        "datetime": "2024-08-14T15:23:03.259Z",
+        "course": 2,
+        "lesson": null,
+        "amount": "150000.00",
+        "method": "cash"
     }
-  },
-  {
+},
+{
     "model": "users.payment",
     "pk": 3,
     "fields": {
-      "user": 1,
-      "datetime": "2024-09-16T23:23:03.599Z",
-      "course": null,
-      "lesson": 3,
-      "amount": "1870.00",
-      "method": "credit"
+        "user": 1,
+        "datetime": "2024-09-16T23:23:03.599Z",
+        "course": null,
+        "lesson": 3,
+        "amount": "1870.00",
+        "method": "credit"
     }
-  },
-  {
+},
+{
     "model": "education.course",
     "pk": 1,
     "fields": {
-      "name": "Физико-математический",
-      "preview": "",
-      "description": null
+        "name": "Физико-математический",
+        "preview": "",
+        "description": null,
+        "owner": 3
     }
-  },
-  {
+},
+{
     "model": "education.course",
     "pk": 2,
     "fields": {
-      "name": "Информационные технологии",
-      "preview": "",
-      "description": null
+        "name": "Информационные технологии",
+        "preview": "",
+        "description": null,
+        "owner": 4
     }
-  },
-  {
+},
+{
     "model": "education.lesson",
     "pk": 1,
     "fields": {
-      "name": "Физика",
-      "preview": "",
-      "description": null,
-      "video": "",
-      "course": 1
+        "name": "Физика",
+        "preview": "",
+        "description": null,
+        "video": "",
+        "course": 1,
+        "owner": 3
     }
-  },
-  {
+},
+{
     "model": "education.lesson",
     "pk": 2,
     "fields": {
-      "name": "Математика",
-      "preview": "",
-      "description": null,
-      "video": "",
-      "course": 1
+        "name": "Математика",
+        "preview": "",
+        "description": null,
+        "video": "",
+        "course": 1,
+        "owner": 3
     }
-  },
-  {
+},
+{
     "model": "education.lesson",
     "pk": 3,
     "fields": {
-      "name": "Информатика",
-      "preview": "",
-      "description": null,
-      "video": "",
-      "course": 2
+        "name": "Информатика",
+        "preview": "",
+        "description": null,
+        "video": "",
+        "course": 2,
+        "owner": 4
     }
-  },
-  {
+},
+{
     "model": "education.lesson",
     "pk": 4,
     "fields": {
-      "name": "Python",
-      "preview": "",
-      "description": null,
-      "video": "",
-      "course": 2
+        "name": "Python",
+        "preview": "",
+        "description": null,
+        "video": "",
+        "course": 2,
+        "owner": 4
     }
-  },
-  {
+},
+{
     "model": "education.lesson",
     "pk": 5,
     "fields": {
-      "name": "C++",
-      "preview": "",
-      "description": null,
-      "video": "",
-      "course": 2
+        "name": "C++",
+        "preview": "",
+        "description": null,
+        "video": "",
+        "course": 2,
+        "owner": 4
     }
-  }
+}
 ]

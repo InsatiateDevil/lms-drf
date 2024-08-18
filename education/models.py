@@ -1,4 +1,5 @@
 from django.db import models
+from config import settings
 
 
 class Course(models.Model):
@@ -13,6 +14,14 @@ class Course(models.Model):
     )
     description = models.TextField(
         verbose_name='Описание курса',
+        blank=True,
+        null=True
+    )
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        verbose_name='Владелец',
+        related_name='courses',
         blank=True,
         null=True
     )
@@ -50,6 +59,14 @@ class Lesson(models.Model):
         Course,
         on_delete=models.CASCADE,
         verbose_name='Курс',
+        related_name='lessons',
+        blank=True,
+        null=True
+    )
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        verbose_name='Владелец',
         related_name='lessons',
         blank=True,
         null=True
