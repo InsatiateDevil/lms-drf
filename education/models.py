@@ -49,8 +49,7 @@ class Lesson(models.Model):
         blank=True,
         null=True
     )
-    video = models.FileField(
-        upload_to='course/',
+    video = models.URLField(
         verbose_name='Видео',
         blank=True,
         null=True
@@ -79,3 +78,30 @@ class Lesson(models.Model):
     def __str__(self):
         return self.name
 
+
+class Subscription(models.Model):
+    course = models.ForeignKey(
+        Course,
+        on_delete=models.CASCADE,
+        related_name='subscriptions',
+        verbose_name='Курс'
+    )
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='subscriptions',
+        verbose_name='Пользователь'
+    )
+    expires_at = models.DateTimeField(
+        verbose_name="Дата окончания подписки",
+        blank=True,
+        null=True
+    )
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name="Статус подписки(активная/неактивная)",
+    )
+    period = models.PositiveIntegerField(
+        default=30,
+        verbose_name="Периодичность подписки",
+    )
