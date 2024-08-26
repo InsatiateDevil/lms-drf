@@ -50,11 +50,14 @@ class PaymentCreateAPIView(generics.CreateAPIView):
         payment = serializer.save(user=self.request.user)
         if payment.course:
             payment_obj = payment.course
-        else:
+        elif payment.lesson:
             payment_obj = payment.lesson
+        else:
+            raise AttributeError('Нужно указать курс или урок')
         price = create_stripe_price(payment_obj)
         session_id, payment_link = create_stripe_session(price)
         payment.session_id = session_id
         payment.link = payment_link
+        payment.amount = payment_obj.price
         payment.save()
 
