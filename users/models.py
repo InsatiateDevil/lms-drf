@@ -51,20 +51,60 @@ class User(AbstractUser):
 
 
 class Payment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Пользователь')
-    datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата оплаты')
-    course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name='Курс', null=True, blank=True)
-    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, verbose_name='Оплаченный урок', null=True, blank=True)
-    amount = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Сумма платежа')
-    method = models.CharField(max_length=100, verbose_name='Способ оплаты')
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        verbose_name='Пользователь',
+        null=True,
+        blank=True
+    )
+    datetime = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='Дата оплаты'
+    )
+    course = models.ForeignKey(
+        Course,
+        on_delete=models.CASCADE,
+        verbose_name='Курс',
+        null=True,
+        blank=True
+    )
+    lesson = models.ForeignKey(
+        Lesson,
+        on_delete=models.CASCADE,
+        verbose_name='Оплаченный урок',
+        null=True,
+        blank=True
+    )
+    amount = models.PositiveIntegerField(
+        verbose_name='Сумма платежа',
+        blank=True,
+        null=True,
+    )
+    method = models.CharField(
+        max_length=100,
+        verbose_name='Способ оплаты',
+        default='Card'
+    )
+    session_id = models.CharField(
+        max_length=255,
+        verbose_name='Идентификатор сессии',
+        blank=True,
+        null=True,
+        help_text='Введите идентификатор сессии'
+    )
+    link = models.URLField(
+        max_length=400,
+        blank=True,
+        null=True,
+        verbose_name='Ссылка на оплату',
+        help_text='Введите ссылку на оплату'
+    )
 
     class Meta:
         verbose_name = 'платеж'
         verbose_name_plural = 'платежи'
 
     def __str__(self):
-        if self.lesson:
-            return f'{self.user} - {self.lesson}'
-        else:
-            return f'{self.user} - {self.course}'
+        return f"{self.user} {self.amount}"
 

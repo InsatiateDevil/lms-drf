@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django_filters',
     'users',
     'education',
-
+    'drf_spectacular',
+    'drf_spectacular_sidecar',
 ]
 
 MIDDLEWARE = [
@@ -146,13 +147,26 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Проект по продаже курсов',
+    'DESCRIPTION': 'Сайт для продажи курсов, а в будущем и для обучения на этих курсах',
+    'VERSION': 'None',
+    'SERVE_INCLUDE_SCHEMA': False,
+    'SWAGGER_UI_DIST': 'SIDECAR',
+    'SWAGGER_UI_FAVICON_HREF': 'SIDECAR',
+    'REDOC_DIST': 'SIDECAR',
+}
+
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
 
 # LOGGING = {
 #     "version": 1,

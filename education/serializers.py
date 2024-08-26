@@ -10,7 +10,7 @@ class LessonSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Lesson
-        fields = ('id', 'name', 'description', 'preview', 'course', 'video', 'owner')
+        fields = '__all__'
 
 
 class CourseSerializer(serializers.ModelSerializer):
@@ -22,21 +22,27 @@ class CourseSerializer(serializers.ModelSerializer):
         return instance.lessons.count()
 
     def get_subscription(self, instance):
-        return SubscriptionSerializer().to_representation(
-            Subscription.objects.filter(
+        subscription = Subscription.objects.filter(
                 user=self.context['request'].user,
                 course=instance,
                 is_active=True
-            ).first()
-        )
+            )
+        if subscription.exists():
+            return SubscriptionSerializer().to_representation(
+            subscription.first()
+            )
+        else:
+            return []
+
+
 
     class Meta:
         model = Course
-        fields = ('name', 'description', 'preview', 'lessons_number', 'lessons', 'subscription')
+        fields = "__all__"
 
 
 class SubscriptionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Subscription
-        fields = ('user', 'course')
+        fields = "__all__"

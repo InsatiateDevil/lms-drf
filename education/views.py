@@ -3,12 +3,12 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
 from education.models import Course, Lesson, Subscription
 from education.paginators import CustomPaginator
 from education.permissions import IsOwner, IsModer
 from education.serializers import CourseSerializer, LessonSerializer, \
     SubscriptionSerializer
+from users.services import create_stripe_product
 
 
 class CourseViewSet(viewsets.ModelViewSet):
@@ -17,7 +17,9 @@ class CourseViewSet(viewsets.ModelViewSet):
     pagination_class = CustomPaginator
 
     def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+        course = serializer.save()
+        stripe_product_id = create_stripe_product(course.name)
+        serializer.save(owner=self.request.user, stripe_product_id=stripe_product_id)
 
 
     def get_permissions(self):
@@ -35,7 +37,9 @@ class LessonCreateAPIView(generics.CreateAPIView):
     permission_classes = (IsAuthenticated, ~IsModer)
 
     def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+        lesson = serializer.save()
+        stripe_product_id = create_stripe_product(lesson.name)
+        serializer.save(owner=self.request.user, stripe_product_id=stripe_product_id)
 
 
 class LessonRetrieveAPIView(generics.RetrieveAPIView):

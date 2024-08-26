@@ -25,6 +25,19 @@ class Course(models.Model):
         blank=True,
         null=True
     )
+    price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        verbose_name='Цена',
+        help_text='Цена курса в рублях',
+    )
+    stripe_product_id = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True,
+        verbose_name='Идентификатор продукта для API Stripe',
+        help_text='Идентификатор продукта для API Stripe',
+    )
 
     class Meta:
         verbose_name = 'курс'
@@ -69,6 +82,19 @@ class Lesson(models.Model):
         related_name='lessons',
         blank=True,
         null=True
+    )
+    price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        verbose_name='Цена',
+        help_text='Цена урока в рублях',
+    )
+    stripe_product_id = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True,
+        verbose_name='Идентификатор продукта для API Stripe',
+        help_text='Идентификатор продукта для API Stripe',
     )
 
     class Meta:
