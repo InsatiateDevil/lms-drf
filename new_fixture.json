@@ -1,0 +1,503 @@
+[{
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$1cB9KkL91WoPuDZSmUTHEp$X3NX8qzxrR8rjeZJ2CIDueQw+P8st2Tvo8CO4lGcvHU=",
+      "last_login": "2024-08-28T16:59:35.820Z",
+      "is_superuser": true,
+      "first_name": "Admin",
+      "last_name": "Adminov",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-08-14T13:02:09.609Z",
+      "email": "admin@gmail.com",
+      "phone_number": null,
+      "avatar": "",
+      "token": null,
+      "city": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$5JUH5t2exKDi61u2GkPRuZ$q1DkWTJMWfMBTU0q9jG4tkychnsCu/wb8fi9uUrSpY4=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Moder",
+      "last_name": "Moderov",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-08-18T14:18:54Z",
+      "email": "moder@mail.ru",
+      "phone_number": null,
+      "avatar": "",
+      "token": null,
+      "city": null,
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$wI55LN46AEFGpbYkim0BYl$8o6jBCA3OvxCzszE5qb/J6B32oEPepjHsq5Ne4pTkR4=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Owner1",
+      "last_name": "Ownerov1",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-08-18T14:51:00.726Z",
+      "email": "owner1@mail.ru",
+      "phone_number": null,
+      "avatar": "",
+      "token": null,
+      "city": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$atba4iIwRNnLCCrANbGWs6$deP1rdoah7cbZdVOOZIjFwk5vckPSmiSTCrpvozR5w8=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Owner2",
+      "last_name": "Ownerov2",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-08-18T15:13:22.388Z",
+      "email": "owner2@mail.ru",
+      "phone_number": null,
+      "avatar": "",
+      "token": null,
+      "city": null,
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$5JUH5t2exKDi61u2GkPRuZ$q1DkWTJMWfMBTU0q9jG4tkychnsCu/wb8fi9uUrSpY4=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "User",
+      "last_name": "Userov",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-08-28T17:00:16Z",
+      "email": "ilidanum@yandex.ru",
+      "phone_number": null,
+      "avatar": "",
+      "token": null,
+      "city": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$5JUH5t2exKDi61u2GkPRuZ$q1DkWTJMWfMBTU0q9jG4tkychnsCu/wb8fi9uUrSpY4=",
+      "last_login": "2024-07-28T16:59:35.820Z",
+      "is_superuser": false,
+      "first_name": "User",
+      "last_name": "Userov",
+      "is_staff": false,
+      "is_active": false,
+      "date_joined": "2024-08-28T17:01:17Z",
+      "email": "ilidanum@gmail.com",
+      "phone_number": null,
+      "avatar": "",
+      "token": null,
+      "city": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "datetime": "2024-08-14T13:14:03.649Z",
+      "course": 1,
+      "lesson": null,
+      "amount": 134400,
+      "method": "cash",
+      "session_id": null,
+      "link": null
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "datetime": "2024-08-14T15:23:03.259Z",
+      "course": 2,
+      "lesson": null,
+      "amount": 150000,
+      "method": "cash",
+      "session_id": null,
+      "link": null
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 3,
+    "fields": {
+      "user": 1,
+      "datetime": "2024-09-16T23:23:03.599Z",
+      "course": null,
+      "lesson": 3,
+      "amount": 1870,
+      "method": "credit",
+      "session_id": null,
+      "link": null
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 4,
+    "fields": {
+      "user": 3,
+      "datetime": "2024-08-26T12:04:56.206Z",
+      "course": 5,
+      "lesson": null,
+      "amount": null,
+      "method": "Card",
+      "session_id": null,
+      "link": null
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 5,
+    "fields": {
+      "user": 3,
+      "datetime": "2024-08-26T12:09:08.867Z",
+      "course": 5,
+      "lesson": null,
+      "amount": null,
+      "method": "Card",
+      "session_id": null,
+      "link": null
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 6,
+    "fields": {
+      "user": 3,
+      "datetime": "2024-08-26T12:09:35.985Z",
+      "course": 5,
+      "lesson": null,
+      "amount": null,
+      "method": "Card",
+      "session_id": "cs_test_a1KERoPt3VdyLa5xj3vZytSX5zKgbzXRC05WnV2yMjMfPox0hqAmCK0dZw",
+      "link": "https://checkout.stripe.com/c/pay/cs_test_a1KERoPt3VdyLa5xj3vZytSX5zKgbzXRC05WnV2yMjMfPox0hqAmCK0dZw#fidkdWxOYHwnPyd1blpxYHZxWjA0VXd%2Fc2pHVEdfanJ2d1x2RGtxfU9OMUpAQWk9Rm9gZ0lQVlBwa3J3SWZgcUFjRmF9bG1gbEBgYmlEPFQ3PDNxMzwzbUlPQU52c2A9NWpVdVdub2FifU9tNTU3fF9BU2dsdycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 7,
+    "fields": {
+      "user": 3,
+      "datetime": "2024-08-26T12:13:34.843Z",
+      "course": 5,
+      "lesson": null,
+      "amount": null,
+      "method": "Card",
+      "session_id": "cs_test_a1U4kGu8WOGiFTusGnRTucDFWJucewHY8OFvKKUnP3K8PxCcgtqR64lul7",
+      "link": "https://checkout.stripe.com/c/pay/cs_test_a1U4kGu8WOGiFTusGnRTucDFWJucewHY8OFvKKUnP3K8PxCcgtqR64lul7#fidkdWxOYHwnPyd1blpxYHZxWjA0VXd%2Fc2pHVEdfanJ2d1x2RGtxfU9OMUpAQWk9Rm9gZ0lQVlBwa3J3SWZgcUFjRmF9bG1gbEBgYmlEPFQ3PDNxMzwzbUlPQU52c2A9NWpVdVdub2FifU9tNTU3fF9BU2dsdycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 8,
+    "fields": {
+      "user": 3,
+      "datetime": "2024-08-26T17:27:39.661Z",
+      "course": null,
+      "lesson": null,
+      "amount": null,
+      "method": "Card",
+      "session_id": null,
+      "link": null
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 9,
+    "fields": {
+      "user": 3,
+      "datetime": "2024-08-26T17:28:10.438Z",
+      "course": null,
+      "lesson": 4,
+      "amount": 10000,
+      "method": "Card",
+      "session_id": "cs_test_a1RWNse6Cv6Dbyej4wDH2CTTQlYE22xHCC4E272XCrQNJ9DtJsIG4IX648",
+      "link": "https://checkout.stripe.com/c/pay/cs_test_a1RWNse6Cv6Dbyej4wDH2CTTQlYE22xHCC4E272XCrQNJ9DtJsIG4IX648#fidkdWxOYHwnPyd1blpxYHZxWjA0VXd%2Fc2pHVEdfanJ2d1x2RGtxfU9OMUpAQWk9Rm9gZ0lQVlBwa3J3SWZgcUFjRmF9bG1gbEBgYmlEPFQ3PDNxMzwzbUlPQU52c2A9NWpVdVdub2FifU9tNTU3fF9BU2dsdycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl"
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 1,
+    "fields": {
+      "name": "Физико-математический",
+      "preview": "",
+      "description": null,
+      "owner": 3,
+      "price": "10000.00",
+      "stripe_product_id": null
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 2,
+    "fields": {
+      "name": "Информационные технологии",
+      "preview": "",
+      "description": null,
+      "owner": 4,
+      "price": "10000.00",
+      "stripe_product_id": null
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 3,
+    "fields": {
+      "name": "Тестовый, для платежей(обновлен)",
+      "preview": "",
+      "description": null,
+      "owner": 3,
+      "price": "15000.00",
+      "stripe_product_id": "prod_QjUVtADoeBkDPb"
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 4,
+    "fields": {
+      "name": "Тестовый, для платежей",
+      "preview": "",
+      "description": null,
+      "owner": 3,
+      "price": "15000.00",
+      "stripe_product_id": "prod_QjUWOKM5uUCdfB"
+    }
+  },
+  {
+    "model": "education.course",
+    "pk": 5,
+    "fields": {
+      "name": "Тестовый, для платежей",
+      "preview": "",
+      "description": null,
+      "owner": 3,
+      "price": "15000.00",
+      "stripe_product_id": "prod_QjUbnXYK2chj76"
+    }
+  },
+  {
+    "model": "education.lesson",
+    "pk": 1,
+    "fields": {
+      "name": "Физика",
+      "preview": "",
+      "description": null,
+      "video": "",
+      "course": 1,
+      "owner": 3,
+      "price": "10000.00",
+      "stripe_product_id": null
+    }
+  },
+  {
+    "model": "education.lesson",
+    "pk": 2,
+    "fields": {
+      "name": "Математика",
+      "preview": "",
+      "description": null,
+      "video": "",
+      "course": 1,
+      "owner": 3,
+      "price": "10000.00",
+      "stripe_product_id": null
+    }
+  },
+  {
+    "model": "education.lesson",
+    "pk": 3,
+    "fields": {
+      "name": "Информатика",
+      "preview": "",
+      "description": null,
+      "video": "",
+      "course": 2,
+      "owner": 4,
+      "price": "10000.00",
+      "stripe_product_id": null
+    }
+  },
+  {
+    "model": "education.lesson",
+    "pk": 4,
+    "fields": {
+      "name": "Python",
+      "preview": "",
+      "description": null,
+      "video": "",
+      "course": 2,
+      "owner": 4,
+      "price": "10000.00",
+      "stripe_product_id": null
+    }
+  },
+  {
+    "model": "education.lesson",
+    "pk": 5,
+    "fields": {
+      "name": "C++",
+      "preview": "",
+      "description": null,
+      "video": "",
+      "course": 2,
+      "owner": 4,
+      "price": "10000.00",
+      "stripe_product_id": null
+    }
+  },
+  {
+    "model": "education.subscription",
+    "pk": 10,
+    "fields": {
+      "course": 1,
+      "user": 3,
+      "expires_at": null,
+      "is_active": true,
+      "period": 30
+    }
+  },
+  {
+    "model": "education.subscription",
+    "pk": 11,
+    "fields": {
+      "course": 3,
+      "user": 6,
+      "expires_at": null,
+      "is_active": true,
+      "period": 30
+    }
+  },
+  {
+    "model": "education.subscription",
+    "pk": 12,
+    "fields": {
+      "course": 3,
+      "user": 7,
+      "expires_at": null,
+      "is_active": true,
+      "period": 30
+    }
+  },
+  {
+    "model": "django_celery_beat.intervalschedule",
+    "pk": 1,
+    "fields": {
+      "every": 24,
+      "period": "hours"
+    }
+  },
+  {
+    "model": "django_celery_beat.crontabschedule",
+    "pk": 1,
+    "fields": {
+      "minute": "0",
+      "hour": "4",
+      "day_of_month": "*",
+      "month_of_year": "*",
+      "day_of_week": "*",
+      "timezone": "Europe/Moscow"
+    }
+  },
+  {
+    "model": "django_celery_beat.periodictasks",
+    "pk": 1,
+    "fields": {
+      "last_update": "2024-08-28T18:02:57.197Z"
+    }
+  },
+  {
+    "model": "django_celery_beat.periodictask",
+    "pk": 2,
+    "fields": {
+      "name": "celery.backend_cleanup",
+      "task": "celery.backend_cleanup",
+      "interval": null,
+      "crontab": 1,
+      "solar": null,
+      "clocked": null,
+      "args": "[]",
+      "kwargs": "{}",
+      "queue": null,
+      "exchange": null,
+      "routing_key": null,
+      "headers": "{}",
+      "priority": null,
+      "expires": null,
+      "expire_seconds": 43200,
+      "one_off": false,
+      "start_time": null,
+      "enabled": true,
+      "last_run_at": null,
+      "total_run_count": 0,
+      "date_changed": "2024-08-28T17:58:55.204Z",
+      "description": ""
+    }
+  },
+  {
+    "model": "django_celery_beat.periodictask",
+    "pk": 3,
+    "fields": {
+      "name": "Деактивация неактивных пользователей",
+      "task": "users.tasks.check_last_login_and_disactivate_user",
+      "interval": 1,
+      "crontab": null,
+      "solar": null,
+      "clocked": null,
+      "args": "[]",
+      "kwargs": "{}",
+      "queue": null,
+      "exchange": null,
+      "routing_key": null,
+      "headers": "{}",
+      "priority": null,
+      "expires": null,
+      "expire_seconds": null,
+      "one_off": false,
+      "start_time": "2024-08-28T18:04:00Z",
+      "enabled": true,
+      "last_run_at": null,
+      "total_run_count": 0,
+      "date_changed": "2024-08-28T18:02:57.196Z",
+      "description": ""
+    }
+  }
+]

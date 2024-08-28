@@ -9,6 +9,7 @@ from education.permissions import IsOwner, IsModer
 from education.serializers import CourseSerializer, LessonSerializer, \
     SubscriptionSerializer
 from users.services import create_stripe_product
+from education.tasks import subscribers_notification
 
 
 class CourseViewSet(viewsets.ModelViewSet):
@@ -20,6 +21,10 @@ class CourseViewSet(viewsets.ModelViewSet):
         course = serializer.save()
         stripe_product_id = create_stripe_product(course.name)
         serializer.save(owner=self.request.user, stripe_product_id=stripe_product_id)
+
+    def perform_update(self, serializer):
+        course = serializer.save()
+        subscribers_notification.delay(course_id=course.id)
 
 
     def get_permissions(self):
