@@ -181,6 +181,13 @@ CELERY_TIMEZONE = os.getenv('CELERY_TIMEZONE')
 CELERY_TASK_TRACK_STARTED = os.getenv('CELERY_TASK_TRACK_STARTED')
 CELERY_TASK_TIME_LIMIT = os.getenv('CELERY_TASK_TIME_LIMIT')
 
+CELERY_BEAT_SCHEDULE = {
+    'task-name': {
+        'task': 'users.tasks.check_last_login_and_disactivate_user',
+        'schedule': timedelta(days=1),
+    },
+}
+
 # LOGGING = {
 #     "version": 1,
 #     "disable_existing_loggers": False,
