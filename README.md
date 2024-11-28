@@ -12,6 +12,7 @@
 - Django REST Framework 3.12 или выше
 - PostgreSQL 16 или выше
 - Celery 5.0 или выше
+- Redis 5.0 или выше
 
 ## Установка
 
