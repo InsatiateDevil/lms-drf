@@ -38,5 +38,5 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 
-2. Откройте браузер и перейдите по адресу http://localhost:8000/docs,
+2. Откройте браузер и перейдите по адресу http://127.0.0.1:8000/swagger-ui/,
 чтобы получить доступ к документации API.
